@@ -1,9 +1,8 @@
-import React from "react";
-import Ping from "./Ping";
+import Ping from "@/components/Ping";
 import { client } from "@/sanity/lib/client";
 import { STARTUP_VIEWS_QUERY } from "@/sanity/lib/queries";
 import { writeClient } from "@/sanity/lib/write-client";
-import { unstable_after as after } from "next/server";
+import { after } from "next/server";
 
 const View = async ({ id }: { id: string }) => {
   const { views: totalViews } = await client
@@ -15,7 +14,7 @@ const View = async ({ id }: { id: string }) => {
       await writeClient
         .patch(id)
         .set({ views: totalViews + 1 })
-        .commit()
+        .commit(),
   );
 
   return (
@@ -25,12 +24,9 @@ const View = async ({ id }: { id: string }) => {
       </div>
 
       <p className="view-text">
-        <span className="font-black">
-          {totalViews === 1 ? `View: ${totalViews}` : `Views : ${totalViews} `}
-        </span>
+        <span className="font-black">Views: {totalViews}</span>
       </p>
     </div>
   );
 };
-
 export default View;

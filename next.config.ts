@@ -22,6 +22,10 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "st2.depositphotos.com", // Add this domain for external images
       },
+      {
+        protocol: "https",
+        hostname: "avatars.githubusercontent.com", // Add this entry
+      },
     ],
   },
   experimental: {

@@ -12,7 +12,8 @@ const Navbar = async() => {
     <header className='px-5 py-3 bg-white shadow-sm font-work-sans'>
         <nav className='flex justify-between items-center'>
                 <Link href="/">
-                <Image src="/logo.png" alt="logo" width={144} height={30} />
+                {/* <Image src="/logo.png" alt="logo" width={144} height={30} /> */}
+                <p className="text-2xl font-bold m-4 border-2 p-2 rounded-xl border-black-200 hover:bg-blue-100">Starthubs</p>
                 </Link>
 
                 <div className='flex items-center gap-5 text-black'> 
@@ -53,7 +54,7 @@ const Navbar = async() => {
                             await signIn("github");
                           }}
                         >
-                          <button type="submit">Login</button>
+                          <button type="submit" className="font-bold m-4 border-2 rounded-xl p-2  border-black-200 hover:bg-blue-100">Login</button>
                         </form>
                       )}
                 </div>
